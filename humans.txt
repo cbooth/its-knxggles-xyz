@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Callum Booth -- Owner -- @knxggles
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, HTML5 Boilerplate, CSS3, Normalize
+    jQuery, Sketch.js

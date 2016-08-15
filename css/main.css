@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+canvas {
+  display: block;
+}
+
+main {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+section {
+  margin-top: 80px;
+  margin-left: 15%;
+  margin-right: 15%;
+
+  padding: 10px;
+
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  color: hsl(0, 0%, 20%);
+  font-size: 3em;
+}
+
+/* unvisited link */
+a:link {
+    color: hsl(0, 0%, 20%);
+}
+
+/* visited link */
+a:visited {
+    color: hsl(0, 0%, 20%);
+}
+
+/* mouse over link */
+a:hover {
+    color: hsl(0, 0%, 35%);
+}
+
+/* selected link */
+a:active {
+    color: hsl(0, 0%, 20%);
+}
+
+a {
+  transition: color ease 0.2s;
+  text-decoration: none;
+}
