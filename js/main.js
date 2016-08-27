@@ -199,18 +199,7 @@ $(window).on('mousemove', function(e) {
 
 $(document).ready(function() {
   var randomSkyHue = Math.floor(Math.random() * 254);
+  var skyColour = 'hsl({hue}, 50%, 80%)'.supplant({hue: randomSkyHue});
 
-  var startColour = 'hsl({hue}, 50%, 80%)';
-  var endColour = 'hsl({hue}, 30%, 95%)';
-
-  startColour = startColour.supplant({hue: randomSkyHue});
-  endColour = endColour.supplant({hue: randomSkyHue});
-
-  var gradientString = 'linear-gradient({start} 0%, {end} 75%';
-  gradientString = gradientString.supplant({
-    start: startColour,
-    end: endColour
-  });
-
-  $('canvas').css('background', gradientString);
+  $('canvas').css('background', skyColour);
 });
