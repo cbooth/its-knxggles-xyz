@@ -1,10 +1,10 @@
 var valid = window.jQuery;
 
+// Jack Rugile's (jackrugile.com) Parallax Mountains sketch.js (modified)
 var Mountain, MountainRange, dt, mountainRanges, sketch;
 
 sketch = Sketch.create();
 
-sketch.mouse.x = sketch.width / 10;
 sketch.mouse.y = sketch.height;
 
 mountainRanges = [];
@@ -107,7 +107,11 @@ MountainRange.prototype.render = function() {
     sketch.beginPath();
 
     pointCount = this.mountains.length;
-    sketch.moveTo(this.mountains[0].x, this.mountains[0].y);
+
+    // Offset by 10 pixels to accomodate stroke width.
+    var offset = 10;
+
+    sketch.moveTo(this.mountains[0].x - offset, this.mountains[0].y);
 
     for (i = j = 0, ref = pointCount - 2; j <= ref; i = j += 1) {
       c = (this.mountains[i].x + this.mountains[i + 1].x) / 2;
@@ -116,13 +120,17 @@ MountainRange.prototype.render = function() {
       sketch.quadraticCurveTo(this.mountains[i].x, this.mountains[i].y, c, d);
     }
 
-    sketch.lineTo(sketch.width - this.x, sketch.height);
-    sketch.lineTo(0 - this.x, sketch.height);
+    sketch.lineTo(sketch.width - this.x, sketch.height + offset);
+    sketch.lineTo(this.x - offset, sketch.height + offset);
 
     sketch.closePath();
 
     sketch.fillStyle = this.color;
     sketch.fill();
+
+    sketch.strokeStyle = "white";
+    sketch.lineWidth = 3;
+    sketch.stroke();
 
     return sketch.restore();
   }
@@ -134,7 +142,8 @@ sketch.setup = function() {
     i = 3;
     results = [];
 
-    var randomMountainHue = Math.floor(Math.random() * 254);
+    var mountainHue = 220;
+    var mountainSat = 6;
     var colorString = 'hsl({h}, {s}%, {l}%)';
 
     while (i--) {
@@ -150,9 +159,9 @@ sketch.setup = function() {
         },
         speed: (i + 1) * .003,
         color: colorString.supplant({
-          h: randomMountainHue,
-          s: i + 11,
-          l: 75 - (i * 13)
+          h: mountainHue,
+          s: mountainSat,
+          l: 31 - (i * 7)
         })
       })));
     }
@@ -193,6 +202,12 @@ sketch.draw = function() {
   }
 };
 
+$(window).on('mousemove', function(e) {
+  return sketch.mouse.y = e.pageY;
+});
+
+
+// Douglas Crockford's Remedial Javascript
 String.prototype.supplant = function (o) {
   return this.replace(
     /\{([^{}]*)\}/g,
@@ -202,14 +217,3 @@ String.prototype.supplant = function (o) {
     }
   );
 };
-
-$(window).on('mousemove', function(e) {
-  return sketch.mouse.y = e.pageY;
-});
-
-$(document).ready(function() {
-  var randomSkyHue = Math.floor(Math.random() * 254);
-  var skyColour = 'hsl({hue}, 50%, 80%)'.supplant({hue: randomSkyHue});
-
-  $('canvas').css('background', skyColour);
-});
