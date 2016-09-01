@@ -8,7 +8,6 @@ sketch.mouse.x = sketch.width / 10;
 sketch.mouse.y = sketch.height;
 
 mountainRanges = [];
-dt = 1;
 
 Mountain = function(config) {
   return this.reset(config);
@@ -77,7 +76,6 @@ MountainRange.prototype.populate = function() {
 
 MountainRange.prototype.update = function() {
   if (valid) {
-    this.x -= (sketch.mouse.x * this.speed) * dt;
     var firstMountain = this.mountains[0];
 
     if (firstMountain.width + firstMountain.x + this.x < -this.width.max) {
@@ -171,10 +169,6 @@ sketch.clear = function() {
 
 sketch.update = function() {
   if (valid) {
-    // Constrain dt between 0.1 and 5
-    dt = sketch.dt < 0.1 ? 0.1 : sketch.dt / 16;
-    dt = dt > 5 ? 5 : dt;
-
     var i = mountainRanges.length;
     var results = [];
 
