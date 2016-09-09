@@ -128,7 +128,7 @@ MountainRange.prototype.render = function() {
     sketch.fillStyle = this.color;
     sketch.fill();
 
-    sketch.strokeStyle = "white";
+    sketch.strokeStyle = 'white';
     sketch.lineWidth = 3;
     sketch.stroke();
 
