@@ -42,17 +42,20 @@ h1, a:link, a:visited, a:active {
     color: hsl(0, 0%, 20%);
 }
 
-h2 {
+h2, i {
   display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 a:hover {
-    color: hsl(0, 0%, 27%);
+    color: hsl(0, 0%, 35%);
 }
 
 a {
   transition: color ease 0.2s;
   text-decoration: none;
+  line-height: 4em;
 }
 
 .links {
