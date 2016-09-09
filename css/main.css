@@ -91,4 +91,10 @@ a {
   h2 {
     font-size: 3.5vw;
   }
+
+  section {
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
