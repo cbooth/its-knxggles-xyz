@@ -10,7 +10,7 @@
         <meta name="author" content="Callum Booth">
         <meta name="keywords" content="knxggles">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
 
         <meta name="google-site-verification" content="JHpSN822z9ff3pQ51xaz1U9MQ9qDaGHgHcbgXw-gS_U" />
 
@@ -27,18 +27,57 @@
 
         <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
         <style amp-custom>
-          @import url(https://fonts.googleapis.com/css?family=Raleway);
-          @import url(css/font-awesome.min.css);
-          html, body { height: 100%; }
+          /* latin-ext */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+          }
+          /* latin */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+          }
+
+          /* A VERY stripped down version of FontAwesome */
+          @font-face {
+            font-family: 'FontAwesome';
+            src: url('fonts/fontawesome-webfont.eot?v=4.6.3');
+            src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+          }
+
+          .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 3em;
+            width: 1.28571429em;
+            text-align: center;
+          }
+
+          .tw:before { content: "\f099"; }
+          .tu:before { content: "\f173"; }
+          .in:before { content: "\f16d"; }
+          .sn:before { content: "\f2ac"; }
+          .gi:before { content: "\f09b"; }
+          .gl:before { content: "\f0ac"; }
+          /* End FontAwesome */
 
           section {
-            height: 100%;
             margin-top: 30px;
             margin-left: 5%;
             margin-right: 5%;
-
             padding: 10px;
-
             font-family: 'Raleway', serif;
           }
 
@@ -71,6 +110,8 @@
           }
 
           .mobile-label { display: inline-block; }
+          amp-img { background-color: grey; }
+
         </style>
 
         <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -81,27 +122,27 @@
               <h1>its.knxggles</h1>
               <div class="links">
                 <a href="//twitter.com/knxggles" target="_blank" aria-label="Twitter (@knxggles)">
-                  <i class="fa fa-twitter fa-3x fa-fw"></i>
+                  <i class="fa tw"></i>
                   <h2 class="mobile-label">Twitter (@knxggles)</h2>
                 </a>
                 <a href="//dreamworks-and-petticoats.tumblr.com" target="_blank" aria-label="Tumblr">
-                  <i class="fa fa-tumblr fa-3x fa-fw"></i>
+                  <i class="fa tu"></i>
                   <h2 class="mobile-label">Tumblr</h2>
                 </a>
                 <a href="//instagram.com/knxggles" target="_blank" aria-label="Instagram (@knxggles)">
-                  <i class="fa fa-instagram fa-3x fa-fw"></i>
+                  <i class="fa in"></i>
                   <h2 class="mobile-label">Instagram (@knxggles)</h2>
                 </a>
                 <a href="//snapchat.com/add/theboothy" target="_blank" aria-label="Snapchat (theboothy)">
-                  <i class="fa fa-snapchat-ghost fa-3x fa-fw"></i>
+                  <i class="fa sn"></i>
                   <h2 class="mobile-label">Snapchat (theboothy)</h2>
                 </a>
                 <a href="//github.com/cbooth" target="_blank" aria-label="Github (cbooth)">
-                  <i class="fa fa-github-alt fa-3x fa-fw"></i>
+                  <i class="fa gi"></i>
                   <h2 class="mobile-label">GitHub (cbooth)</h2>
                 </a>
                 <a href="//knxggles.xyz" target="_blank" aria-label="Personal Blog (knxggles.xyz)">
-                  <i class="fa fa-globe fa-3x fa-fw"></i>
+                  <i class="fa gl"></i>
                   <h2 class="mobile-label">Personal Blog (knxggles.xyz)</h2>
                 </a>
               </div>
@@ -109,20 +150,7 @@
         </main>
 
         <!-- Piwik -->
-        <script type="text/javascript">
-            var _paq = _paq || [];
-            _paq.push(['setCustomDimension', 1, 'true']);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function() {
-                var u="https://analytics.knxggles.xyz/piwik/";
-                _paq.push(['setTrackerUrl', u+'piwik.php']);
-                _paq.push(['setSiteId', '2']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            })();
-        </script>
-        <noscript><p><img src="https://analytics.knxggles.xyz/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+        <p><amp-img src="https://analytics.knxggles.xyz/piwik/piwik.php?idsite=2" width=0 height=0 layout="nodisplay" alt="" /></p>
         <!-- End Piwik Code -->
     </body>
 </html>
